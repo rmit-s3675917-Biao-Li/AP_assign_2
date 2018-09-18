@@ -1,4 +1,4 @@
-package assignment_1_final;
+package model;
 
 import java.util.ArrayList;
 import java.util.Scanner;

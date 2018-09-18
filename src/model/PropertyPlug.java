@@ -1,4 +1,4 @@
-package assignment_1_final;
+package model;
 
 public interface PropertyPlug {
 	public String toString();

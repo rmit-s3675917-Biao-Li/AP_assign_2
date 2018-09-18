@@ -1,4 +1,4 @@
-package assignment_1_final;
+package model;
 
 	public abstract class Property implements PropertyPlug{
 		 private String id;

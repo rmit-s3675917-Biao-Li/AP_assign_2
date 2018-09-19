@@ -1,6 +1,9 @@
 package view;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import controller.ChangeInterface;
 import controller.Handler;
 
 import javafx.application.Application;
@@ -9,16 +12,21 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import model.Property;
 
-public class UI_Startup extends Application implements EventHandler<ActionEvent> {
-	
+public class UI_Startup extends Application  {
+	private ArrayList<Property> propertyList = new ArrayList<Property>();
+	private VBox content;
 	public static void main(String[] args) {
 	launch(args);
 	}
@@ -28,17 +36,14 @@ public class UI_Startup extends Application implements EventHandler<ActionEvent>
 		
 		VBox vbox = new VBox();
 		addMenu(vbox);
-		addFilter(vbox);
-		
+		content = new VBox();
+		ScrollPane sp = new ScrollPane();
+		sp.setContent(content);
+		vbox.getChildren().add(sp);
 		Scene scene = new Scene(vbox, 800, 800);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		
-	}
-
-	private void addFilter(VBox vbox) {
-		ScrollPane sp = new ScrollPane();
-		vbox.getChildren().add(sp);
 	}
 	
 
@@ -56,7 +61,10 @@ public class UI_Startup extends Application implements EventHandler<ActionEvent>
 		
 		Menu propertyMenu = new Menu("Property");
 		MenuItem viewMenu = new MenuItem("List");
-		viewMenu.setOnAction(e -> System.out.println(11111));
+		viewMenu.setOnAction(e -> {
+			new ChangeInterface().ChangeToPropertyListInterface(content);
+			System.out.println("change a property list view");
+		});
 		MenuItem addMenu = new MenuItem("Add");
 		MenuItem rentMenu = new MenuItem("Rent");
 		MenuItem returnMenu = new MenuItem("Return");
@@ -67,11 +75,5 @@ public class UI_Startup extends Application implements EventHandler<ActionEvent>
 		v.getChildren().add(menubar);
 	}
 
-	@Override
-	public void handle(ActionEvent event) {
-		// TODO Auto-generated method stub
-		
-		
-	}
 
 }

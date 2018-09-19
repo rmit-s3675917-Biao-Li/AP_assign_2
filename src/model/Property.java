@@ -1,6 +1,8 @@
 package model;
 
-	public abstract class Property implements PropertyPlug{
+import javafx.scene.image.Image;
+
+public abstract class Property implements PropertyPlug{
 		 private String id;
 		 private String stname;
 		 private String suburb;
@@ -14,6 +16,7 @@ package model;
 		 private Record currentRecord;
 		 private DateTime lastMaintenance = new DateTime(0,0,0);
 		 private boolean getwaiting;
+		 private Image image;
 		
 		public Property(String id, String type, String stnum, String stname, String suburb, int bednum) {
 			this.id = id;

@@ -9,6 +9,8 @@ import controller.Handler;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,12 +23,14 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Property;
 
 public class UI_Startup extends Application  {
-	private ArrayList<Property> propertyList = new ArrayList<Property>();
 	private VBox content;
+	private ArrayList<Property> propertyList = new ArrayList<Property>();
+	
 	public static void main(String[] args) {
 	launch(args);
 	}
@@ -48,6 +52,7 @@ public class UI_Startup extends Application  {
 	
 
 	public void addMenu(VBox v) {
+		HBox hMenu = new HBox();
 		MenuBar menubar = new MenuBar();
 		Menu systemMenu = new Menu("DBJ Motel");
 		MenuItem Logout = new MenuItem("Logout");
@@ -63,16 +68,25 @@ public class UI_Startup extends Application  {
 		MenuItem viewMenu = new MenuItem("List");
 		viewMenu.setOnAction(e -> {
 			new ChangeInterface().ChangeToPropertyListInterface(content);
-			System.out.println("change a property list view");
+			System.out.println("change to property list interface");
 		});
 		MenuItem addMenu = new MenuItem("Add");
+		addMenu.setOnAction(e ->{
+			new ChangeInterface().ChangeToAddPropertyInterface(content);
+			System.out.println("change to add property interface");
+		});
 		MenuItem rentMenu = new MenuItem("Rent");
 		MenuItem returnMenu = new MenuItem("Return");
 		
 		propertyMenu.getItems().addAll(viewMenu,addMenu,rentMenu,returnMenu);
-		
+		menubar.setMinSize(500, 20);
 		menubar.getMenus().addAll(systemMenu,fileMenu,propertyMenu);
-		v.getChildren().add(menubar);
+		Label search = new Label("Search");
+		search.setAlignment(Pos.BOTTOM_CENTER);
+		search.setMinWidth(50);
+		search.setPadding(new Insets(5,10,5,10));
+		hMenu.getChildren().addAll(menubar, search,new TextField(""));
+		v.getChildren().add(hMenu);
 	}
 
 

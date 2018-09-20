@@ -13,6 +13,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class ChangeInterface {
 	public void ChangeToPropertyListInterface(VBox content) {
@@ -111,7 +114,26 @@ public class ChangeInterface {
 		TextField BedroomNumTF = new TextField();
 		BedroomNumHbox.getChildren().addAll(BedroomNumLabel, BedroomNumTF);
 		
-		content.getChildren().addAll(PropertyIDHbox,TypeHbox,StreetNumHbox,StreetHbox,SuburbHbox,BedroomNumHbox);
+		// Image Upload
+		HBox ImageUploadHbox = new HBox();
+		Label ImageUploadLabel = new Label("Image:");
+		ImageUploadLabel.setPadding(new Insets(5,5,5,5));
+		Button UploadButton = new Button("Upload");
+		UploadButton.setOnAction(e ->{
+			Stage stage = new Stage();
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setTitle("Upload Image");
+			FileChooser imageFC = new FileChooser();
+			imageFC.showOpenDialog(stage);
+
+		});
+		
+		ImageUploadHbox.getChildren().addAll(ImageUploadLabel, UploadButton);
+		
+		//Add Button
+		Button AddButton = new Button("Add");
+		
+		content.getChildren().addAll(PropertyIDHbox,TypeHbox,StreetNumHbox,StreetHbox,SuburbHbox,BedroomNumHbox,ImageUploadHbox,AddButton);
 		content.setSpacing(5);
 	}
 

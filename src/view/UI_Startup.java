@@ -24,6 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Property;
@@ -71,9 +72,11 @@ public class UI_Startup extends Application  {
 			new ChangeInterface().ChangeToPropertyListInterface(content);
 			System.out.println("change to property list interface");
 		});
+		//Add menu
 		MenuItem addMenu = new MenuItem("Add");
 		addMenu.setOnAction(e ->{
 			Stage stage = new Stage();
+			stage.setTitle("Add Property");
 			stage.initModality(Modality.APPLICATION_MODAL);
 			VBox addPropertyVbox = new VBox();
 			Scene scene = new Scene(addPropertyVbox, 400, 300);
@@ -82,6 +85,7 @@ public class UI_Startup extends Application  {
 			new ChangeInterface().ChangeToAddPropertyInterface(addPropertyVbox);
 			System.out.println("change to add property interface");
 		});
+		
 		MenuItem rentMenu = new MenuItem("Rent");
 		MenuItem returnMenu = new MenuItem("Return");
 		

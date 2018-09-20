@@ -24,6 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Property;
 
@@ -54,7 +55,7 @@ public class UI_Startup extends Application  {
 	public void addMenu(VBox v) {
 		HBox hMenu = new HBox();
 		MenuBar menubar = new MenuBar();
-		Menu systemMenu = new Menu("DBJ Motel");
+		Menu systemMenu = new Menu("FlexiRentSystem");
 		MenuItem Logout = new MenuItem("Logout");
 		MenuItem Exit = new MenuItem("Exit");
 		systemMenu.getItems().addAll(Logout,Exit);
@@ -72,7 +73,13 @@ public class UI_Startup extends Application  {
 		});
 		MenuItem addMenu = new MenuItem("Add");
 		addMenu.setOnAction(e ->{
-			new ChangeInterface().ChangeToAddPropertyInterface(content);
+			Stage stage = new Stage();
+			stage.initModality(Modality.APPLICATION_MODAL);
+			VBox addPropertyVbox = new VBox();
+			Scene scene = new Scene(addPropertyVbox, 400, 300);
+			stage.setScene(scene);
+			stage.show();
+			new ChangeInterface().ChangeToAddPropertyInterface(addPropertyVbox);
 			System.out.println("change to add property interface");
 		});
 		MenuItem rentMenu = new MenuItem("Rent");

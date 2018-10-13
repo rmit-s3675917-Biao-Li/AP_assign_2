@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javafx.stage.DirectoryChooser;
@@ -11,6 +12,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.DateTime;
+import model.Property;
 
 public class FileController {
 	private static File F = null;
@@ -35,6 +37,8 @@ public class FileController {
 				System.exit(0);
 			}
 
+			ArrayList<Property> PL = DataStorage.getPropertyList();
+
 			while (input.hasNextLine()) {
 				// to do
 				line = input.nextLine();
@@ -53,7 +57,7 @@ public class FileController {
 					}
 				} else {
 					if (number != 0)
-						DataStorage.propertyList.add(p);
+						PL.add(p);
 
 					if (ss.length == 9)
 						p = new model.Apartment(ss[0], ss[4], ss[1], ss[2], ss[3], Integer.parseInt(ss[5]), ss[6],
@@ -63,7 +67,7 @@ public class FileController {
 								new File("Files/" + ss[8]));
 						p.setLastMaintenance(new DateTime(ss[7]));
 					}
-					
+
 					number++;
 					i = 0;
 					records = new model.Record[10];
@@ -75,9 +79,10 @@ public class FileController {
 
 			}
 			if (number != 0)
-				DataStorage.propertyList.add(p);
+				PL.add(p);
 			input.close();
 
+			DataStorage.setPropertyList(PL);
 		}
 	}
 
@@ -86,18 +91,18 @@ public class FileController {
 			File f = new File(F.getAbsolutePath() + "/ExportFile.txt");
 			try {
 				PrintWriter output = new PrintWriter(f);
-				for (int i = 0; i < DataStorage.propertyList.size(); i++) {
-					output.write(DataStorage.propertyList.get(i).toString() + "\n");
-					System.out.println(DataStorage.propertyList.get(i).toString());
-					if (DataStorage.propertyList.get(i).getStatus().equals("Rented")) {
-						output.write(DataStorage.propertyList.get(i).getCurrentRecord().toString() + "\n");
-						System.out.println(DataStorage.propertyList.get(i).getCurrentRecord().toString());
-					}
+				ArrayList<Property> PL = DataStorage.getPropertyList();
+
+				for (int i = 0; i < PL.size(); i++) {
+					output.write(PL.get(i).toString() + "\n");
+					System.out.println(PL.get(i).toString());
+					if (PL.get(i).getStatus().equals("Rented"))
+						output.write(PL.get(i).getCurrentRecord().toString() + "\n");
+
 					for (int j = 0; j < 10; j++) {
-						if (DataStorage.propertyList.get(i).getRentRecords()[j] == null)
+						if (PL.get(i).getRentRecords()[j] == null)
 							break;
-						output.write(DataStorage.propertyList.get(i).getRentRecords()[j].toString() + "\n");
-						System.out.println(DataStorage.propertyList.get(i).getRentRecords()[j]);
+						output.write(PL.get(i).getRentRecords()[j].toString() + "\n");
 					}
 				}
 

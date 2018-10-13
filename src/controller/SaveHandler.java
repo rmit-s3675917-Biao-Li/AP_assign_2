@@ -11,8 +11,8 @@ public class SaveHandler implements EventHandler<ActionEvent> {
 		DatabaseController.deleteTable();
 		DatabaseController.create1();
 		DatabaseController.create2();
-		for (int i=0; i<DataStorage.propertyList.size(); i++) {
-			DatabaseController.insert(DataStorage.propertyList.get(i));
+		for (int i=0; i<DataStorage.getPropertyList().size(); i++) {
+			DatabaseController.insert(DataStorage.getPropertyList().get(i));
 			System.out.println(i);
 		}
 		

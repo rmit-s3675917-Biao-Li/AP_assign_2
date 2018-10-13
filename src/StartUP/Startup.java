@@ -1,16 +1,17 @@
-package view;
+package StartUP;
 
 import controller.DatabaseController;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
-public class UI_Startup extends Application {
-	public static VBox content;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
+import javafx.stage.Stage;
+import view.ChangeInterface;
+
+public class Startup extends Application {
+	public static FlowPane content;
 
 	public static void main(String[] args) {
 		DatabaseController.connect();
@@ -21,30 +22,20 @@ public class UI_Startup extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-//		try {
-//			controller.FileController.importFile();
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+//		primaryStage --> BorderPane --> {top --> menuBar
+//										center --> FlowPane}	
 		new controller.SaveHandler();
 		BorderPane bp = new BorderPane();
-		content = new VBox();
-		StackPane stack = new StackPane(content);
-		ChangeInterface.ChangeToPropertyListInterface();
-
+		bp.setPrefSize(2000, 1000);
+		
+		content = new FlowPane();
 		ScrollPane sp = new ScrollPane();
-		sp.setPrefSize(800, 800);
-		sp.setContent(stack);
-		sp.setHbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-
-		content.setMaxWidth(700);
-
+		sp.setContent(content);
 		bp.setTop(ChangeInterface.addMenu());
 		bp.setCenter(sp);
+		ChangeInterface.ChangeToPropertyListInterface();
 
 		sp.setFitToWidth(true);
-		// sp.setFitToHeight(true);
 		primaryStage.setScene(new Scene(bp));
 		primaryStage.show();
 

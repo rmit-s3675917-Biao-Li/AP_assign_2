@@ -2,19 +2,13 @@ package controller;
 
 import java.io.File;
 import java.util.ArrayList;
-import model.DateTime;
 import model.Property;
-import view.ChangeInterface;
 
 
-/**
- * 
- * @author Biao 16 Sep. 2018 2:45:58 pm
- */
+
 
 public class DataStorage {
-	public static ArrayList<Property> propertyList = new ArrayList<Property>();
-//	public static DateTime CurrentTime;
+	private static ArrayList<Property> propertyList = new ArrayList<Property>();
 	private static File selectImage = null;
 
 	public static void initialization() {
@@ -23,6 +17,14 @@ public class DataStorage {
 		
 	}
 	
+	public static ArrayList<Property> getPropertyList() {
+		return propertyList;
+	}
+
+	public static void setPropertyList(ArrayList<Property> propertyList) {
+		DataStorage.propertyList = propertyList;
+	}
+
 	public static File getSelectImage() {
 		return selectImage;
 	}

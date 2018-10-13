@@ -2,6 +2,11 @@ package controller;
 
 
 public class RentException extends Exception{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public RentException(int i) {
 		if (i==1) {
 			view.ChangeInterface.NewWindowForAlert("The apartment should not be rented for more than 28 days!");

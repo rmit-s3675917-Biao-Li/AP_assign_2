@@ -45,7 +45,7 @@ public class RentHandler implements EventHandler<ActionEvent> {
 				
 				try {
 					p.rent(customerID, dt, dayss);
-					view.ChangeInterface.stage.close();
+					view.ChangeInterface.proertyDetailStage.close();
 					view.ChangeInterface.NewWindowsForPropertyDetails(p);
 					stage.close();
 					view.ChangeInterface.NewWindowForAlert("Booked Successfully!");

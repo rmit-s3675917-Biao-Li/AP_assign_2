@@ -37,7 +37,7 @@ public class ReturnHandler implements EventHandler<ActionEvent> {
 				
 				try {
 					p.Return(dt);
-					view.ChangeInterface.stage.close();
+					view.ChangeInterface.proertyDetailStage.close();
 					view.ChangeInterface.NewWindowsForPropertyDetails(p);
 					stage.close();
 					view.ChangeInterface.NewWindowForAlert("Return Successfully!");

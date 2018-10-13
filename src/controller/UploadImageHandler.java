@@ -10,7 +10,6 @@ import javafx.event.EventHandler;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import view.ChangeInterface;
 
 public class UploadImageHandler implements EventHandler<ActionEvent> {
 

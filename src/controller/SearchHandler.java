@@ -16,10 +16,10 @@ public class SearchHandler implements EventHandler<KeyEvent> {
 		TF.textProperty().addListener((v, oldValue, newValue) -> { 
 			System.out.println(oldValue);
 			if (oldValue == null || !newValue.equals(oldValue)) {
-				view.ChangeInterface.Content_center.getChildren().clear();
-				for (int i = 0; i < DataStorage.propertyList.size(); i++) {
-					if (DataStorage.propertyList.get(i).getId().toLowerCase().contains(newValue)) {
-						view.ChangeInterface.addOnePropertytoContent(DataStorage.propertyList.get(i));
+				StartUP.Startup.content.getChildren().clear();
+				for (int i = 0; i < DataStorage.getPropertyList().size(); i++) {
+					if (DataStorage.getPropertyList().get(i).getId().toLowerCase().contains(newValue)) {
+						view.ChangeInterface.addOnePropertytoContent(DataStorage.getPropertyList().get(i));
 					}
 				}
 			}

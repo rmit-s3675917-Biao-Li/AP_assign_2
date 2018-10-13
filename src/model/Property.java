@@ -248,13 +248,13 @@ public abstract class Property implements PropertyPlug {
 	public String getDescription22() {
 		String s = "";
 		String d = Description;
-		int i = 60;
-		while (d.length() > 60) {
+		int i = 50;
+		while (d.length() > 50) {
 			while (d.charAt(i) != ' ')
 				i--;
 			s += d.substring(0, i + 1) + "\n";
 			d = d.substring(i + 1);
-			i = 60;
+			i = 50;
 		}
 		s = s + d;
 		return s;

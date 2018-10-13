@@ -14,10 +14,13 @@ import model.Suite;
 public class AddPropertyHandler implements EventHandler<ActionEvent> {
 	private ArrayList<HBox> hboxArray = new ArrayList<HBox>();
 	private ComboBox<String> aorP;
-
+	private ArrayList<model.Property> PL;
+	
 	public AddPropertyHandler(ArrayList<HBox> hboxArray, ComboBox<String> aorP) {
 		this.hboxArray = hboxArray;
 		this.aorP = aorP;
+		PL = DataStorage.getPropertyList();
+
 	}
 
 	@Override
@@ -64,10 +67,11 @@ public class AddPropertyHandler implements EventHandler<ActionEvent> {
 				|| suburb.equals("") || bednum.equals(""))
 			throw new AddPropertyException(2);
 		else {
+			
 			if (aorP.getValue().toString().equals("Apartment"))
 				try {
 					if (Integer.parseInt(bednum)<1 && Integer.parseInt(bednum)>3) throw new AddPropertyException(5);
-					DataStorage.propertyList.add(new Apartment(id, aorP.getValue().toString(), stnum, stname, suburb,
+					PL.add(new Apartment(id, aorP.getValue().toString(), stnum, stname, suburb,
 							Integer.parseInt(bednum), "Available", desription, selectImage));
 				} catch (Exception e) {
 					throw new AddPropertyException(2);
@@ -83,7 +87,7 @@ public class AddPropertyHandler implements EventHandler<ActionEvent> {
 					model.Suite newSuite = new Suite(id, aorP.getValue().toString(), stnum, stname, suburb, 3,
 							"Available", desription, selectImage);
 					newSuite.setLastMaintenance(maintenanceDate);
-					DataStorage.propertyList.add(newSuite);
+					PL.add(newSuite);
 
 				} catch (Exception e) {
 					throw new AddPropertyException(4);
@@ -92,13 +96,15 @@ public class AddPropertyHandler implements EventHandler<ActionEvent> {
 			}
 
 		}
+		
+		DataStorage.setPropertyList(PL);
 
 	}
 
-	private static boolean repeatId(String id) {
+	private boolean repeatId(String id) {
 		int i = 0;
-		while (i < DataStorage.propertyList.size()) {
-			if (DataStorage.propertyList.get(i).getId().equals(id))
+		while (i < PL.size()) {
+			if (PL.get(i).getId().equals(id))
 				return true;
 			i++;
 		}

@@ -19,7 +19,7 @@ public class SearchHandler implements EventHandler<KeyEvent> {
 				StartUP.Startup.content.getChildren().clear();
 				for (int i = 0; i < DataStorage.getPropertyList().size(); i++) {
 					if (DataStorage.getPropertyList().get(i).getId().toLowerCase().contains(newValue)) {
-						view.ChangeInterface.addOnePropertytoContent(DataStorage.getPropertyList().get(i));
+						view.HomePage.addOnePropertytoContent(DataStorage.getPropertyList().get(i));
 					}
 				}
 			}

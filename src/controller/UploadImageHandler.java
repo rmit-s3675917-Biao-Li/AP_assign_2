@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -24,7 +25,7 @@ public class UploadImageHandler implements EventHandler<ActionEvent> {
 		if (f != null) {
 			
 				uploadFiles(f);
-				view.ChangeInterface.t.setText(f.getAbsolutePath());
+				view.NewWindowForAddPropertyInterface.setT(new Label(f.getAbsolutePath()));
 
 		}
 	}

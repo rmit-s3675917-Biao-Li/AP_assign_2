@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import model.Apartment;
@@ -35,12 +36,12 @@ public class AddPropertyHandler implements EventHandler<ActionEvent> {
 
 		try {
 			addProperty(s1, aorP, s2, s3, s4, s5, s6, s7, DataStorage.getSelectImage());
-			view.ChangeInterface.NewWindowForAlert("Property Successfully Added");
-			view.ChangeInterface.Addstage.close();
+			new view.NewWindowForAlert("Property Successfully Added");
+			view.NewWindowForAddPropertyInterface.Addstage.close();
 			File f = null;
 			DataStorage.setSelectImage(f);
-			view.ChangeInterface.t.setText(".....");
-			view.ChangeInterface.ChangeToPropertyListInterface();
+			view.NewWindowForAddPropertyInterface.setT(new Label("....."));
+			view.HomePage.ChangeToPropertyListInterface();
 		} catch (AddPropertyException e) {
 			System.out.println("Wrong Input");
 		}

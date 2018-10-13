@@ -8,7 +8,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-import view.ChangeInterface;
+import view.HomePage;
 
 public class Startup extends Application {
 	public static FlowPane content;
@@ -31,9 +31,9 @@ public class Startup extends Application {
 		content = new FlowPane();
 		ScrollPane sp = new ScrollPane();
 		sp.setContent(content);
-		bp.setTop(ChangeInterface.addMenu());
+		bp.setTop(HomePage.addMenu());
 		bp.setCenter(sp);
-		ChangeInterface.ChangeToPropertyListInterface();
+		HomePage.ChangeToPropertyListInterface();
 
 		sp.setFitToWidth(true);
 		primaryStage.setScene(new Scene(bp));

@@ -16,7 +16,7 @@ public class SaveHandler implements EventHandler<ActionEvent> {
 			System.out.println(i);
 		}
 		
-		view.ChangeInterface.NewWindowForAlert("Data Saved");
+		new view.NewWindowForAlert("Data Saved");
 	}
 
 }

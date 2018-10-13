@@ -1,10 +1,10 @@
 package model;
 
+import controller.RentException;
+
 public interface PropertyPlug {
-	public String toString();
-	public String getDetails();
-	public boolean rent(String customerId,DateTime rentDate,int numOfRentDay);
-	public boolean Return(DateTime returnDate);
-	public boolean performMaintenance();
-	public boolean completeMaintenance(DateTime completionDate);
+	public abstract String toString();
+	public abstract String getDetails();
+	public abstract void rent(String customerId,DateTime rentDate,int numOfRentDay) throws RentException;
+	public abstract double getfee();
 }

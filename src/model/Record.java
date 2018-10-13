@@ -11,20 +11,44 @@ public class Record {
 	private double rentalfee;
 	private double latefee;
 
-	Record() {
-		this.actualreturndate = null;
+	public Record() {
+		rentdate = new DateTime();
+		estreturndate = new DateTime();
+		customer_id = "";
+		this.actualreturndate = new DateTime();
+		rentalfee = 0;
+		latefee = 0;
+	}
+//for current record import
+	public Record(String record_id, DateTime rentdate, DateTime estreturndate) {
+		this.record_id = record_id;
+		this.rentdate = rentdate;
+		this.estreturndate = estreturndate;
+		this.actualreturndate = new DateTime();
 		rentalfee = 0;
 		latefee = 0;
 	}
 
-	Record(String customer_id, DateTime rentdate, int days) {
+	public Record(String property_id, String customer_id, DateTime rentdate, DateTime estreturndate) {
+		this.record_id = property_id + "_" + customer_id + "_" + rentdate.getEightDigitDate();
 		this.customer_id = customer_id;
 		this.rentdate = rentdate;
-		DateTime dt = new DateTime(rentdate, days);
-		this.estreturndate = dt;
-		this.actualreturndate = null;
+		this.estreturndate = estreturndate;
+		this.actualreturndate = new DateTime();
 		rentalfee = 0;
 		latefee = 0;
+	}
+
+//for old record import
+	public Record(String record_id, DateTime rentdate, DateTime estreturndate, DateTime actualreturndate,
+			double rentalfee, double latefee) {
+		this.record_id = record_id;
+		this.rentdate = rentdate;
+		this.estreturndate = estreturndate;
+		this.actualreturndate = actualreturndate;
+		this.rentalfee = rentalfee;
+		this.latefee = latefee;
+
 	}
 
 	public String getRecord_id() {

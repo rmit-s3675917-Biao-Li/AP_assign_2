@@ -1,0 +1,48 @@
+/*C60*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C61*/SET SCHEMA PUBLIC
+DROP TABLE PROPERTY
+DISCONNECT
+/*C62*/SET SCHEMA PUBLIC
+CREATE TABLE PROPERTY (id VARCHAR(20) NOT NULL,type VARCHAR(20) NOT NULL,stnum VARCHAR(8) NOT NULL,stname VARCHAR(20) NOT NULL,suburb VARCHAR(20) NOT NULL,bednum INT NOT NULL,description VARCHAR(4000) NOT NULL,status VARCHAR(20) NOT NULL,lastmaintain VARCHAR(12) NOT NULL,rentdate VARCHAR(12) NOT NULL,estreturndate VARCHAR(12),rentrecords VARCHAR(1000),customerid VARCHAR(12),imagelocation VARCHAR(20) NOT NULL,PRIMARY KEY (id))
+DISCONNECT
+/*C63*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_001','Apartment','650','Swanston Street','South Yarra',1,'Marina Tower harbour view has a terrace and is set in Melbourne, within just 900 metres of Etihad Stadium and 1.7 km of Melbourne Convention and Exhibition Centre.','Available','10/10/2018','10/10/2018','10/10/2018','A_001_CUS_035_23072018:23/07/2018:27/07/2018:29/07/2018:572.00:328.90/nA_001_CUS_014_09072018:09/07/2018:13/07/2018:13/07/2018:572.00:0.00/nA_001_CUS_047_01072018:01/07/2018:04/07/2018:07/07/2018:429.00:493.35/n','','Files/A_001.png')
+COMMIT
+DISCONNECT
+/*C64*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_002','Apartment','54','Tennyson Street','Kensington',2,'Located in Melbourne in the Victoria region, Turnkey Accommodation-North Melbourne provides accommodation with free WiFi.','Available','10/10/2018','10/10/2018','10/10/2018','A_002_CUS_32_04102018:04/10/2018:08/10/2018:06/10/2018:420.00:0.00/nA_002_CUS_12_01102018:01/10/2018:04/10/2018:03/10/2018:420.00:0.00/n','','Files/A_002.jpg')
+COMMIT
+DISCONNECT
+/*C65*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_003','Apartment','107','Elizabeth Street','Jolimont',1,'Sleek and Scenic Apartment in Southbank offers accommodation in Melbourne, 600 metres from Melbourne Convention and Exhibition Centre and 700 metres from Eureka Tower.','Rented','10/10/2018','16/07/2018','19/07/2018','A_003_CUS_012_11072018:11/07/2018:14/07/2018:17/07/2018:429.00:493.35/nA_003_CUS_046_01072018:01/07/2018:08/07/2018:09/07/2018:1001.00:164.45/n','null','Files/A_003.jpg')
+COMMIT
+DISCONNECT
+/*C66*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_004','Apartment','12','Bourke Street','Melbourne',3,'Located in the heart of Melbourne CBD, Platinum Apartments at Freshwater Place offers modern self-contained accommodation.','Available','10/10/2018','10/10/2018','10/10/2018','A_004_CUS_3_11102018:11/10/2018:15/10/2018:14/10/2018:957.00:0.00/nA_004_CUS_09_04102018:04/10/2018:08/10/2018:10/10/2018:1276.00:733.70/n','','Files/A_004.jpg')
+COMMIT
+DISCONNECT
+/*C67*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_005','Apartment','45','Frank Street','Melbourne',3,'Featuring a fitness centre and a sauna, St. Kilda Junction Accommodation is just 15 minutes\u2019 walk from St. Kilda Beach.','Available','10/10/2018','10/10/2018','10/10/2018','A_005_CUS_32_16102018:16/10/2018:18/10/2018:19/10/2018:638.00:366.85/nA_005_CUS_31_01102018:01/10/2018:14/10/2018:15/10/2018:4147.00:366.85/n','','Files/A_005.jpg')
+COMMIT
+DISCONNECT
+/*C68*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_006','Apartment','12','wolly Street','Collinwood',2,'Located at Melbourne Airport, this 4.5-star hotel is connected to the airport terminal by a covered walkway. It is a 2-minute walk from the departure and arrivals lounge.','Available','10/10/2018','10/10/2018','10/10/2018','A_006_CUS_9_10102018:10/10/2018:13/10/2018:12/11/2018:630.00:7245.00/nA_006_CUS_76_04102018:04/10/2018:27/10/2018:07/10/2018:630.00:0.00/n','','Files/A_006.jpg')
+COMMIT
+DISCONNECT
+/*C69*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_008','Apartment','20','Irving Street','Brooklyn',2,'Seasons Botanic Gardens combines the space and independence of self-contained apartments with the amenities of a luxury hotel.','Available','10/10/2018','10/10/2018','10/10/2018','A_008_CUS_05_11102018:11/10/2018:14/10/2018:14/10/2018:630.00:0.00/nA_008_CUS_09_05102018:05/10/2018:10/10/2018:10/10/2018:1050.00:0.00/n','','Files/A_008.jpg')
+COMMIT
+DISCONNECT
+/*C70*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_009','Apartment','1','Tatum Street','North Melbourne',1,'Located in the heart of Melbourne, Arrow on Swanston boasts an outdoor pool and a fitness centre.','Available','10/10/2018','10/10/2018','10/10/2018','A_009_CUS_43_23102018:23/10/2018:26/10/2018:24/10/2018:143.00:0.00/nA_009_CUS_044_12102018:12/10/2018:22/10/2018:22/10/2018:1430.00:0.00/n','','Files/A_009.jpg')
+COMMIT
+DISCONNECT
+/*C71*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_010','Apartment','77','Jalen Street','Brownwood',3,'Located in the heart of Melbourne CBD, just off Collins Street, Oaks on Market offers accommodation with kitchenette facilities and 32-inch flat-screen cable TVs.','Available','10/10/2018','10/10/2018','10/10/2018','A_010_CUS_09_12102018:12/10/2018:17/10/2018:17/10/2018:1595.00:0.00/nA_010_CUS_3_01102018:01/10/2018:05/10/2018:09/10/2018:1276.00:1467.40/n','','Files/A_010.jpg')
+COMMIT
+DISCONNECT
+/*C72*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('S_001','Premium Suite','593','William Street','Carlton South',3,'Located in Melbourne, 400 metres from Eureka Tower, Exclusive Stays - Sentinel features a barbecue, tennis court and fitness centre. Southbank Promenade is 500 metres from the property.','Available','01/08/2018','10/10/2018','10/10/2018','S_001_CUS_023_08072018:08/07/2018:13/07/2018:29/07/2018:2770.00:2480.00/nS_001_CUS_021_01072018:01/07/2018:06/07/2018:06/07/2018:2770.00:0.00/n','','Files/S_001.jpg')
+COMMIT
+DISCONNECT

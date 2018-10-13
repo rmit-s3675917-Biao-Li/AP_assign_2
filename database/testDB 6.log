@@ -1,0 +1,106 @@
+/*C38*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C39*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C40*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C41*/SET SCHEMA PUBLIC
+DROP TABLE PROPERTY
+DROP TABLE RECOREDS
+DISCONNECT
+/*C42*/SET SCHEMA PUBLIC
+CREATE TABLE PROPERTY (id VARCHAR(20) NOT NULL,type VARCHAR(20) NOT NULL,stnum VARCHAR(8) NOT NULL,stname VARCHAR(20) NOT NULL,suburb VARCHAR(20) NOT NULL,bednum INT NOT NULL,description VARCHAR(4000) NOT NULL,status VARCHAR(20) NOT NULL,lastmaintain VARCHAR(12) NOT NULL,imagelocation VARCHAR(20) NOT NULL,PRIMARY KEY (id))
+DISCONNECT
+/*C43*/SET SCHEMA PUBLIC
+CREATE TABLE RECOREDS (id VARCHAR(20) NOT NULL,PROPERTY_ID VARCHAR(20) NOT NULL,RECORD_ID VARCHAR(20) NOT NULL,CUSTOMER_ID VARCHAR(20) NOT NULL,RENTDATE VARCHAR(20) NOT NULL,ESTMATEDATE VARCHAR(20) NOT NULL,ACTUALRETURNDATE VARCHAR(20) NOT NULL,RENTALFEE DOUBLE NOT NULL,LATEFEE DOUBLE NOT NULL,PRIMARY KEY (id))
+DISCONNECT
+/*C44*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_001','Apartment','650','Swanston Street','South Yarra',1,'Marina Tower harbour view has a terrace and is set in Melbourne, within just 900 metres of Etihad Stadium and 1.7 km of Melbourne Convention and Exhibition Centre.','Available','11/10/2018','Files/A_001.png')
+COMMIT
+DISCONNECT
+/*C45*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C46*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_002','Apartment','54','Tennyson Street','Kensington',2,'Located in Melbourne in the Victoria region, Turnkey Accommodation-North Melbourne provides accommodation with free WiFi.','Available','11/10/2018','Files/A_002.jpg')
+COMMIT
+DISCONNECT
+/*C47*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C48*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_003','Apartment','107','Elizabeth Street','Jolimont',1,'Sleek and Scenic Apartment in Southbank offers accommodation in Melbourne, 600 metres from Melbourne Convention and Exhibition Centre and 700 metres from Eureka Tower.','Rented','11/10/2018','Files/A_003.jpg')
+COMMIT
+DISCONNECT
+/*C49*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C50*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_004','Apartment','12','Bourke Street','Melbourne',3,'Located in the heart of Melbourne CBD, Platinum Apartments at Freshwater Place offers modern self-contained accommodation.','Available','11/10/2018','Files/A_004.jpg')
+COMMIT
+DISCONNECT
+/*C51*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C52*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_005','Apartment','45','Frank Street','Melbourne',3,'Featuring a fitness centre and a sauna, St. Kilda Junction Accommodation is just 15 minutes\u2019 walk from St. Kilda Beach.','Available','11/10/2018','Files/A_005.jpg')
+COMMIT
+DISCONNECT
+/*C53*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C54*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_006','Apartment','12','wolly Street','Collinwood',2,'Located at Melbourne Airport, this 4.5-star hotel is connected to the airport terminal by a covered walkway. It is a 2-minute walk from the departure and arrivals lounge.','Available','11/10/2018','Files/A_006.jpg')
+COMMIT
+DISCONNECT
+/*C55*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C56*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_007','Apartment','12','Sunscreen Street','South Melbourne',3,'Offering free WiFi and garden views, Close to City - Spacious 3 Bedroom Townhouse provides accommodation set in Adelaide, just a 15-minute walk from Adelaide Oval.','Available','11/10/2018','Files/A_007.jpg')
+COMMIT
+DISCONNECT
+/*C57*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C58*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_008','Apartment','20','Irving Street','Brooklyn',2,'Seasons Botanic Gardens combines the space and independence of self-contained apartments with the amenities of a luxury hotel.','Available','11/10/2018','Files/A_008.jpg')
+COMMIT
+DISCONNECT
+/*C59*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C60*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_009','Apartment','1','Tatum Street','North Melbourne',1,'Located in the heart of Melbourne, Arrow on Swanston boasts an outdoor pool and a fitness centre.','Available','11/10/2018','Files/A_009.jpg')
+COMMIT
+DISCONNECT
+/*C61*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C62*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_010','Apartment','77','Jalen Street','Brownwood',3,'Located in the heart of Melbourne CBD, just off Collins Street, Oaks on Market offers accommodation with kitchenette facilities and 32-inch flat-screen cable TVs.','Available','11/10/2018','Files/A_010.jpg')
+COMMIT
+DISCONNECT
+/*C63*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C64*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('S_001','Premium Suite','593','William Street','Carlton South',3,'Located in Melbourne, 400 metres from Eureka Tower, Exclusive Stays - Sentinel features a barbecue, tennis court and fitness centre. Southbank Promenade is 500 metres from the property.','Available','01/08/2018','Files/S_001.jpg')
+COMMIT
+DISCONNECT
+/*C65*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C66*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('S_002','Premium Suite','42','Murry Street','Chesapeake',3,'Set in Wayville, on the city fringe, Monaco Court is an apartment featuring 2 sunny balconies.','Available','01/01/2018','Files/S_002.jpg')
+COMMIT
+DISCONNECT
+/*C67*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C68*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('S_003','Premium Suite','3','Pinewood Drive','Hoffman Estates',3,'Located right on Glenelg Beach, Stamford Grand a fully equipped fitness centre, an outdoor swimming pool and a gaming room with poker machines.','Available','01/01/2018','Files/S_003.png')
+COMMIT
+DISCONNECT
+/*C69*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C70*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('S_004','Premium Suite','15','West Fork Drive','Miami',3,'Located opposite Adelaide Convention Centre in the heart of the city centre, Oaks Horizons offers spacious modern apartments with fully equipped kitchen and private balcony.','Available','02/02/2018','Files/S_004.jpg')
+COMMIT
+DISCONNECT
+/*C71*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C72*/SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('S_005','Premium Suite','3135','Fittro Street','Batesville',3,'ibis Adelaide offers a restaurant, a bar and a fitness centre. All rooms offer a Smart flat-screen TV and a refrigerator. It is just a 1 minute walk from Rundle Mall.','Available','04/04/2018','Files/S_005.jpg')
+COMMIT
+DISCONNECT
+/*C73*/SET SCHEMA PUBLIC
+DISCONNECT

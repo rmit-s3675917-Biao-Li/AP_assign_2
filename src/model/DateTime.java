@@ -13,6 +13,7 @@ public class DateTime {
 	// set to be current time.
 	public DateTime() {
 		time = System.currentTimeMillis();
+
 	}
 
 	// set Clock Forward In Days
@@ -21,6 +22,12 @@ public class DateTime {
 		time = System.currentTimeMillis() + advance;
 	}
 
+	public DateTime(String s) throws Exception {
+		String[] a;
+		a = s.split("/");
+		setDate(Integer.parseInt(a[0]),Integer.parseInt(a[1]),Integer.parseInt(a[2]));
+		
+	}
 	// startdate's millis plus forwardindays's millis
 	public DateTime(DateTime startDate, int setClockForwardInDays) {
 		advance = ((setClockForwardInDays * 24L + 0) * 60L) * 60000L;

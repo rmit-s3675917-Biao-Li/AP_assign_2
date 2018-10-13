@@ -1,0 +1,84 @@
+SET DATABASE UNIQUE NAME HSQLDB661F3B5A95
+SET DATABASE GC 0
+SET DATABASE DEFAULT RESULT MEMORY ROWS 0
+SET DATABASE EVENT LOG LEVEL 0
+SET DATABASE TRANSACTION CONTROL LOCKS
+SET DATABASE DEFAULT ISOLATION LEVEL READ COMMITTED
+SET DATABASE TRANSACTION ROLLBACK ON CONFLICT TRUE
+SET DATABASE TEXT TABLE DEFAULTS ''
+SET DATABASE SQL NAMES FALSE
+SET DATABASE SQL REFERENCES FALSE
+SET DATABASE SQL SIZE TRUE
+SET DATABASE SQL TYPES FALSE
+SET DATABASE SQL TDC DELETE TRUE
+SET DATABASE SQL TDC UPDATE TRUE
+SET DATABASE SQL CONCAT NULLS TRUE
+SET DATABASE SQL UNIQUE NULLS TRUE
+SET DATABASE SQL CONVERT TRUNCATE TRUE
+SET DATABASE SQL AVG SCALE 0
+SET DATABASE SQL DOUBLE NAN TRUE
+SET FILES WRITE DELAY 500 MILLIS
+SET FILES BACKUP INCREMENT TRUE
+SET FILES CACHE SIZE 10000
+SET FILES CACHE ROWS 50000
+SET FILES SCALE 32
+SET FILES LOB SCALE 32
+SET FILES DEFRAG 0
+SET FILES NIO TRUE
+SET FILES NIO SIZE 256
+SET FILES LOG TRUE
+SET FILES LOG SIZE 50
+CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
+ALTER USER SA SET LOCAL TRUE
+CREATE SCHEMA PUBLIC AUTHORIZATION DBA
+SET SCHEMA PUBLIC
+CREATE MEMORY TABLE PUBLIC.PROPERTY(ID VARCHAR(20) NOT NULL PRIMARY KEY,TYPE VARCHAR(20) NOT NULL,STNUM VARCHAR(8) NOT NULL,STNAME VARCHAR(20) NOT NULL,SUBURB VARCHAR(20) NOT NULL,BEDNUM INTEGER NOT NULL,DESCRIPTION VARCHAR(4000) NOT NULL,STATUS VARCHAR(20) NOT NULL,LASTMAINTAIN VARCHAR(12) NOT NULL,IMAGELOCATION VARCHAR(20) NOT NULL)
+CREATE MEMORY TABLE PUBLIC.RECOREDS(PROPERTY_ID VARCHAR(20) NOT NULL,RECORD_ID VARCHAR(30) NOT NULL PRIMARY KEY,CUSTOMER_ID VARCHAR(20),RENTDATE VARCHAR(20) NOT NULL,ESTMATEDATE VARCHAR(20) NOT NULL,ACTUALRETURNDATE VARCHAR(20) NOT NULL,RENTALFEE DOUBLE NOT NULL,LATEFEE DOUBLE NOT NULL)
+ALTER SEQUENCE SYSTEM_LOBS.LOB_ID RESTART WITH 1
+SET DATABASE DEFAULT INITIAL SCHEMA PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.SQL_IDENTIFIER TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.YES_OR_NO TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.TIME_STAMP TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CARDINAL_NUMBER TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CHARACTER_DATA TO PUBLIC
+GRANT DBA TO SA
+SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+SET SCHEMA PUBLIC
+INSERT INTO PROPERTY VALUES('A_001','Apartment','650','Swanston Street','South Yarra',1,'Marina Tower harbour view has a terrace and is set in Melbourne, within just 900 metres of Etihad Stadium and 1.7 km of Melbourne Convention and Exhibition Centre.','Available','11/10/2018','Files/A_001.png')
+INSERT INTO PROPERTY VALUES('A_002','Apartment','54','Tennyson Street','Kensington',2,'Located in Melbourne in the Victoria region, Turnkey Accommodation-North Melbourne provides accommodation with free WiFi.','Available','11/10/2018','Files/A_002.jpg')
+INSERT INTO PROPERTY VALUES('A_003','Apartment','107','Elizabeth Street','Jolimont',1,'Sleek and Scenic Apartment in Southbank offers accommodation in Melbourne, 600 metres from Melbourne Convention and Exhibition Centre and 700 metres from Eureka Tower.','Rented','11/10/2018','Files/A_003.jpg')
+INSERT INTO PROPERTY VALUES('A_004','Apartment','12','Bourke Street','Melbourne',3,'Located in the heart of Melbourne CBD, Platinum Apartments at Freshwater Place offers modern self-contained accommodation.','Available','11/10/2018','Files/A_004.jpg')
+INSERT INTO PROPERTY VALUES('A_005','Apartment','45','Frank Street','Melbourne',3,'Featuring a fitness centre and a sauna, St. Kilda Junction Accommodation is just 15 minutes\u2019 walk from St. Kilda Beach.','Available','11/10/2018','Files/A_005.jpg')
+INSERT INTO PROPERTY VALUES('A_006','Apartment','12','wolly Street','Collinwood',2,'Located at Melbourne Airport, this 4.5-star hotel is connected to the airport terminal by a covered walkway. It is a 2-minute walk from the departure and arrivals lounge.','Available','11/10/2018','Files/A_006.jpg')
+INSERT INTO PROPERTY VALUES('A_007','Apartment','12','Sunscreen Street','South Melbourne',3,'Offering free WiFi and garden views, Close to City - Spacious 3 Bedroom Townhouse provides accommodation set in Adelaide, just a 15-minute walk from Adelaide Oval.','Available','11/10/2018','Files/A_007.jpg')
+INSERT INTO PROPERTY VALUES('A_008','Apartment','20','Irving Street','Brooklyn',2,'Seasons Botanic Gardens combines the space and independence of self-contained apartments with the amenities of a luxury hotel.','Available','11/10/2018','Files/A_008.jpg')
+INSERT INTO PROPERTY VALUES('A_009','Apartment','1','Tatum Street','North Melbourne',1,'Located in the heart of Melbourne, Arrow on Swanston boasts an outdoor pool and a fitness centre.','Available','11/10/2018','Files/A_009.jpg')
+INSERT INTO PROPERTY VALUES('A_010','Apartment','77','Jalen Street','Brownwood',3,'Located in the heart of Melbourne CBD, just off Collins Street, Oaks on Market offers accommodation with kitchenette facilities and 32-inch flat-screen cable TVs.','Available','11/10/2018','Files/A_010.jpg')
+INSERT INTO PROPERTY VALUES('S_001','Premium Suite','593','William Street','Carlton South',3,'Located in Melbourne, 400 metres from Eureka Tower, Exclusive Stays - Sentinel features a barbecue, tennis court and fitness centre. Southbank Promenade is 500 metres from the property.','Available','01/08/2018','Files/S_001.jpg')
+INSERT INTO PROPERTY VALUES('S_002','Premium Suite','42','Murry Street','Chesapeake',3,'Set in Wayville, on the city fringe, Monaco Court is an apartment featuring 2 sunny balconies.','Available','01/01/2018','Files/S_002.jpg')
+INSERT INTO PROPERTY VALUES('S_003','Premium Suite','3','Pinewood Drive','Hoffman Estates',3,'Located right on Glenelg Beach, Stamford Grand a fully equipped fitness centre, an outdoor swimming pool and a gaming room with poker machines.','Available','01/01/2018','Files/S_003.png')
+INSERT INTO PROPERTY VALUES('S_004','Premium Suite','15','West Fork Drive','Miami',3,'Located opposite Adelaide Convention Centre in the heart of the city centre, Oaks Horizons offers spacious modern apartments with fully equipped kitchen and private balcony.','Available','02/02/2018','Files/S_004.jpg')
+INSERT INTO PROPERTY VALUES('S_005','Premium Suite','3135','Fittro Street','Batesville',3,'ibis Adelaide offers a restaurant, a bar and a fitness centre. All rooms offer a Smart flat-screen TV and a refrigerator. It is just a 1 minute walk from Rundle Mall.','Available','04/04/2018','Files/S_005.jpg')
+INSERT INTO RECOREDS VALUES('A_001','A_001_CUS_014_09072018','null','09/07/2018','13/07/2018','13/07/2018',572.0E0,0.0E0)
+INSERT INTO RECOREDS VALUES('A_001','A_001_CUS_035_23072018','null','23/07/2018','27/07/2018','29/07/2018',572.0E0,328.9E0)
+INSERT INTO RECOREDS VALUES('A_001','A_001_CUS_047_01072018','null','01/07/2018','04/07/2018','07/07/2018',429.0E0,493.35E0)
+INSERT INTO RECOREDS VALUES('A_002','A_002_CUS_12_01102018','null','01/10/2018','04/10/2018','03/10/2018',420.0E0,0.0E0)
+INSERT INTO RECOREDS VALUES('A_002','A_002_CUS_32_04102018','null','04/10/2018','08/10/2018','06/10/2018',420.0E0,0.0E0)
+INSERT INTO RECOREDS VALUES('A_003','A_003_CUS_012_11072018','null','11/07/2018','14/07/2018','17/07/2018',429.0E0,493.35E0)
+INSERT INTO RECOREDS VALUES('A_003','A_003_CUS_046_01072018','null','01/07/2018','08/07/2018','09/07/2018',1001.0E0,164.45E0)
+INSERT INTO RECOREDS VALUES('A_003','A_003_null_16072018','null','16/07/2018','19/07/2018','11/10/2018',-1.0E0,-1.0E0)
+INSERT INTO RECOREDS VALUES('A_004','A_004_CUS_09_04102018','null','04/10/2018','08/10/2018','10/10/2018',1276.0E0,733.7E0)
+INSERT INTO RECOREDS VALUES('A_004','A_004_CUS_3_11102018','null','11/10/2018','15/10/2018','14/10/2018',957.0E0,0.0E0)
+INSERT INTO RECOREDS VALUES('A_005','A_005_CUS_31_01102018','null','01/10/2018','14/10/2018','15/10/2018',4147.0E0,366.85E0)
+INSERT INTO RECOREDS VALUES('A_005','A_005_CUS_32_16102018','null','16/10/2018','18/10/2018','19/10/2018',638.0E0,366.85E0)
+INSERT INTO RECOREDS VALUES('A_006','A_006_CUS_76_04102018','null','04/10/2018','27/10/2018','07/10/2018',630.0E0,0.0E0)
+INSERT INTO RECOREDS VALUES('A_006','A_006_CUS_9_10102018','null','10/10/2018','13/10/2018','12/11/2018',630.0E0,7245.0E0)
+INSERT INTO RECOREDS VALUES('A_008','A_008_CUS_05_11102018','null','11/10/2018','14/10/2018','14/10/2018',630.0E0,0.0E0)
+INSERT INTO RECOREDS VALUES('A_008','A_008_CUS_09_05102018','null','05/10/2018','10/10/2018','10/10/2018',1050.0E0,0.0E0)
+INSERT INTO RECOREDS VALUES('A_009','A_009_CUS_044_12102018','null','12/10/2018','22/10/2018','22/10/2018',1430.0E0,0.0E0)
+INSERT INTO RECOREDS VALUES('A_009','A_009_CUS_43_23102018','null','23/10/2018','26/10/2018','24/10/2018',143.0E0,0.0E0)
+INSERT INTO RECOREDS VALUES('A_010','A_010_CUS_09_12102018','null','12/10/2018','17/10/2018','17/10/2018',1595.0E0,0.0E0)
+INSERT INTO RECOREDS VALUES('A_010','A_010_CUS_3_01102018','null','01/10/2018','05/10/2018','09/10/2018',1276.0E0,1467.4E0)
+INSERT INTO RECOREDS VALUES('S_001','S_001_CUS_021_01072018','null','01/07/2018','06/07/2018','06/07/2018',2770.0E0,0.0E0)
+INSERT INTO RECOREDS VALUES('S_001','S_001_CUS_023_08072018','null','08/07/2018','13/07/2018','29/07/2018',2770.0E0,2480.0E0)
